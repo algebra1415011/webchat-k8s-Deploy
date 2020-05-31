@@ -10,7 +10,7 @@ apt-get install openjdk-8-jdk -y
 
 RUN $USER
 
-ADD ./Group-Chat-With-WebSockets/target/chat-server-0.1.0.jar chat-server-0.1.0.jar
+ADD $PWD/Group-Chat-With-WebSockets/target/chat-server-0.1.0.jar chat-server-0.1.0.jar
 
 RUN java -version
 
