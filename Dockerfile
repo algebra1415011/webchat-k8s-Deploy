@@ -1,6 +1,8 @@
 # Pull base image.
 FROM ubuntu:latest
 
+USER root
+
 RUN \
 # Update
 apt-get update -y && \
