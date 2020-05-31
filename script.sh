@@ -18,6 +18,9 @@ cp ./webchat-k8s-Deploy/Dockerfile Dockerfile
 
 docker build -t webchatapp:1.0 .
 
+echo '<---------Deploying image on the cluster------------>'
+kubectl apply -f ./webchat-k8s-Deploy/manifests
+
 # docker tag webchatapp:1.0 algebra1415011/webchatapp:1.0
 
 
