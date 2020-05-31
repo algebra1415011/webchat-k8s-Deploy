@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: webchatapp-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 9090
   selector:
