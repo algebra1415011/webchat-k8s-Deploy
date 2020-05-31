@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: webchatapp-deploy
+  labels:
+    app: chatting
+    type: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: backend
+  template:
+    metadata:
+      name: webchatapp-pod
+      labels:
+        app: chatting
+        type: backend
+    spec:
+      containers:
+      - name: webchat
+        image: algebra1415011/webchatapp:1.0 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9090     
