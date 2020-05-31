@@ -1,4 +1,6 @@
-o  "<------User Running Process $USER ----->"
+#!/bin/bash
+
+echo  "<------User Running Process $USER ----->"
 
 echo '<------- Fetching webchat app from github ----------->'
 
@@ -12,4 +14,11 @@ echo "<-----------Current Directory-------------->"
 echo $PWD
 echo '<--------Building dockerimage------------------------>'
 
-docker build -t webchatapp:1.0 ./webchat-k8s-Deploy
+cp ./webchat-k8s-Deploy/Dockerfile Dockerfile
+
+docker build -t webchatapp:1.0 .
+
+# docker tag webchatapp:1.0 algebra1415011/webchatapp:1.0
+
+
+# docker push algebra1415011/webchatapp:1.0
